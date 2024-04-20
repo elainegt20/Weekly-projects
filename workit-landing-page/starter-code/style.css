@@ -1,0 +1,411 @@
+@font-face {
+  font-family: "Fraunces";
+  src: url("../fonts/fraunces/Fraunces-VariableFont_SOFT\,WONK\,opsz\,wght.ttf")
+    format("truetype");
+}
+@font-face {
+  font-family: "Manrope";
+  src: url("../fonts/manrope/Manrope-VariableFont_wght.ttf") format("truetype");
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* Apply distinct styles to each element to visualize the box model */
+
+header,
+section,
+article,
+nav,
+div,
+button,
+img,
+h1,
+h2,
+p,
+span {
+  border: 2px;
+
+  padding: 20px;
+}
+
+/* header {
+    border-color: red;
+  }
+  
+  nav {
+    border-color: blue;
+  }
+  
+  div {
+    border-color: green;
+  }
+  
+  button {
+    border-color: orange;
+  }
+  
+  img {
+    border-color: purple;
+  }
+  
+  h1, h2 {
+    border-color: teal;
+  }
+  
+  p {
+    border-color: brown;
+  }
+  
+  span {
+    border-color: pink;
+  }
+  
+  article {
+    border-color: cyan;
+  }
+  
+  section {
+    border-color: yellow;
+  }
+
+.top-nav-container{
+    display: flex
+} */
+
+/*design system*/
+.body {
+  background-color: #fcf8ff;
+}
+:root {
+  font-size: 20px; /*equivalent to 0.5 cm*/
+  font-weight: 400;
+  --serif: "Fraunces", serif;
+  --sans-serif: "Manrope", sans-serif;
+  --color-primary: #24053e;
+  --color-cta: #44ffa1;
+  --color-secondary: #584d62;
+  --color-bg: #fcf8ff;
+  --white: #ffffff;
+}
+
+h1,
+h2,
+h3 {
+  font-weight: 500;
+  font-family: var(--sans-serif);
+}
+h1 {
+  font-size: 4rem;
+  line-height: 4rem;
+  color: var(--white);
+}
+h2 {
+  font-size: 2.8rem;
+  line-height: 3.2rem;
+}
+h3 {
+  font-size: 1.6rem;
+  line-height: 2rem;
+}
+p,
+button {
+  font-size: 1.2rem;
+  line-height: 2rem;
+  font-family: var(--sans-serif);
+}
+button {
+  font-weight: 700;
+  letter-spacing: -0.01rem;
+}
+
+/*site-header - Applied to the <header> element.
+top-nav-container - Applied to the <div> wrapping the <nav> in the header.
+main-nav - Applied to the <nav> element.
+logo - Applied to the <img> representing the site logo.
+access-btn - Applied to the <button> for applying for access in the header.
+*/
+
+.top-nav-container,
+.main-nav,
+.access-btn,
+.site-header,
+.header-content,
+.intro-section,
+.main-title,
+.highlight,
+.learn-more-section {
+  background-color: var(--dark-purple);
+}
+
+.top-nav-container {
+  display: flex;
+  background-color: #24053e;
+}
+
+.main-nav {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  background-color: #24053e;
+}
+
+.access-btn {
+  color: #fcf8ff;
+
+  border-bottom: 5px solid #44ffa1;
+  display: inline-block;
+  padding-bottom: 5px;
+  background-color: #24053e;
+}
+
+/*
+header-content - Applied to the <div> containing the main content in the header.
+intro-section - Applied to the first <div> inside header-content.
+main-title - Applied to the <h1> in the intro section.
+highlight - Applied to the <span> within the main title.
+background-pattern - Applied to images used as background patterns.
+learn-more-section - Applied to the second <div> inside header-content.
+learn-more-btn - Applied to the <button> in the learn-more section.
+
+*/
+
+.site-header {
+  background-color: #24053e;
+  width: 100%;
+  height: 900px;
+}
+
+.header-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #24053e;
+  width: 100%;
+  height: 500px;
+}
+.intro-section {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  background-color: #24053e;
+}
+
+.main-title {
+  width: 700px;
+  height: 300px;
+  text-align: center; /* Centers the text horizontally */
+  margin: 0 auto;
+  align-items: center;
+  background-color: #24053e;
+}
+
+.highlight {
+  position: relative;
+  display: inline-flex;
+  background-color: #24053e;
+}
+
+.highlight::after {
+  content: "";
+  width: 100%; /* Makes the line as wide as the span */
+  height: 5px; /* Thickness of the line */
+  background-color: #44ffa1; /* Color of the line */
+  position: absolute;
+  bottom: 0; /* Position at the bottom of the span */
+  left: 0;
+}
+
+.learn-more-section {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  background-color: #24053e;
+}
+
+.learn-more-btn {
+  width: 9rem;
+  height: 4rem;
+  background-color: #44ffa1;
+
+  font-weight: 100;
+}
+
+/*
+hero-image-container - Applied to the <div> containing the hero image.
+spacer - Applied to the <div> used as a spacer in the hero image container.
+hero-image - Applied to the main hero image.
+*/
+
+.hero-image {
+  position: relative;
+  top: 50px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+
+  z-index: 3;
+  width: 900px; /* Scale the width to fit the container */
+  height: 900px; /* Scale the height to fit the container */
+  object-fit: contain; /* Maintain aspect ratio and contain within the container */
+
+  background-color: none;
+}
+
+/*
+features - Applied to the <section> containing all feature articles.
+feature-container - Applied to the <div> wrapping all articles in the features section.
+feature - Applied to each <article> in the features section.
+feature-number - Applied to the <div> containing the number in each feature.
+feature-details - Applied to the <div> containing the text details in each feature.
+feature-title - Applied to each <h2> in the features.
+feature-description - Applied to each <p> in the features.
+
+
+
+*/
+.features {
+  background-color: #fcf8ff;
+}
+.feature-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  background-color: #fcf8ff;
+}
+
+.feature {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #fcf8ff;
+}
+.feature-details {
+  background-color: #fcf8ff;
+}
+
+.feature-number {
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 25px;
+  font-size: 24px;
+  color: #24053e;
+  background-color: #fcf8ff;
+  border: 2px solid #24053e;
+}
+
+.feature-title {
+  text-align: center;
+  color: #24053e;
+  background-color: #fcf8ff;
+}
+
+.feature-description {
+  text-align: center;
+  color: #24053e;
+  background-color: #fcf8ff;
+}
+
+/*
+founder-message - Applied to the <section> containing the founder's message.
+message-container - Applied to the <div> wrapping the founder's message content.
+founder-photo - Applied to the image of the founder.
+text-content - Applied to the <div> containing the text beside the founder's photo.
+message-title - Applied to the <h2> in the founder message.
+founder-description - Applied to the <p> describing the founder's message.
+apply-btn - Applied to the <button> for applying for access in the founder's message.
+
+*/
+
+.founder-message {
+  background-color: #ffffff;
+}
+.message-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width: 100%;
+  background-color: #ffffff;
+}
+.text-content {
+  position: relative;
+  width: 1000px;
+  height: 500px;
+  right: 150px;
+  top: 200px;
+  z-index: 2;
+  background-color: #24053e;
+}
+.founder-photo {
+  width: 600px;
+  height: 600px;
+  background-color: #ffffff;
+}
+
+.card {
+  position: relative;
+  top: 50px;
+}
+
+.divider {
+  height: 400px;
+  background-color: #fcf8ff;
+}
+.message-title {
+  color: #ffffff;
+}
+
+.founder-description {
+  color: #ffffff;
+}
+
+.apply-btn {
+  position: relative;
+  left: 20px;
+  background-color: #44ffa1;
+  font-weight: 50;
+}
+
+/*
+
+site-footer - Applied to the <footer> element.
+footer-content - Applied to the <div> containing the entire footer.
+footer-logo-container - Applied to the <div> containing the footer logo.
+footer-logo - Applied to the image used as the footer logo.
+social-icons - Applied to the <div> containing social media icons.
+
+*/
+
+.site-footer {
+  background-color: #ffffff;
+}
+.footer-content {
+  background-color: #ffffff;
+}
+
+.footer-logo-container {
+  display: flex;
+  justify-content: center;
+  background-color: #ffffff;
+}
+
+.social-icons {
+  display: flex;
+  justify-content: center;
+  background-color: #ffffff;
+}
+
+.divider-2 {
+  height: 150px;
+  background-color: #ffffff;
+}
+.divider-3 {
+  height: 200px;
+  background-color: #fcf8ff;
+}
